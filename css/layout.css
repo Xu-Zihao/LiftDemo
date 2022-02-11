@@ -1,0 +1,313 @@
+container {
+    /*style="background-image: url("building.png");margin-top: 40px;height: 100%;text-align: center"*/
+}
+
+#global_controller {
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+    width: 100%;
+    height: 4%;
+    background-color: #a8afa9;
+}
+
+#building_container {
+    background-image: url("../src/building.png");
+    background-size: 100% 100%;
+    position: absolute;
+    top: 4%;
+    left: 37.5%;
+    width: 25%;
+    height: 94%;
+    border: solid black 1px;
+}
+
+#left {
+    position: absolute;
+    top: 4%;
+    left: 0;
+    height: 94%;
+    width: 37.5%;
+    border: solid black 1px;
+}
+
+#config {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25%;
+    width: 100%;
+    background: #dcdcdc;
+    border: solid black 1px;
+}
+
+#status {
+    text-align: center;
+    position: absolute;
+    text-align: center;
+    top: 25%;
+    left: 0;
+    height: 75%;
+    width: 100%;
+    border: solid black 1px;
+    background: #dcdcdc;
+}
+#over_status{
+    text-align: center;
+    position: absolute;
+    top: 9%;
+    left: 0;
+    z-index: 3;
+    height: 91%;
+    width: 99.3%;
+    background: #dcdcdc;
+}
+
+#floor_button {
+    position: absolute;
+    text-align: center;
+    top: 4%;
+    left: 62.5%;
+    width: 6%;
+    background: #d9d9d9;
+    height: 94%;
+    border: solid black 1px;
+}
+
+#lift_button {
+    position: absolute;
+    top: 4%;
+    left: 68.5%;
+    width: 12%;
+    height: 94%;
+    background: silver;
+    border: solid black 1px;
+}
+
+#lift_button1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 33%;
+    height: 100%;
+    border: solid black 1px;
+}
+
+#lift_button2 {
+    position: absolute;
+    top: 0;
+    left: 33%;
+    width: 34%;
+    height: 100%;
+    border: solid black 1px;
+}
+
+#lift_button3 {
+    position: absolute;
+    top: 0;
+    left: 67%;
+    width: 33%;
+    height: 100%;
+    border: solid black 1px;
+}
+
+#lift1 {
+    height: 4%;
+    width: 1.4%;
+    position: absolute;
+    z-index: 2;
+    left: 45.77%;
+    top: 86.6%;
+}
+
+#lift2 {
+    height: 4%;
+    width: 1.4%;
+    position: absolute;
+    z-index: 2;
+    left: 49.46%;
+    top: 86.6%;
+}
+
+#lift3 {
+    height: 4%;
+    width: 1.4%;
+    position: absolute;
+    z-index: 2;
+    left: 53.21%;
+    top: 86.6%;
+}
+
+#door1 {
+    height: 4%;
+    width: 0;
+    position: absolute;
+    z-index: 2;
+    left: 46.43%;
+    top: 86.6%;
+}
+
+#door2 {
+    height: 4%;
+    width: 0;
+    position: absolute;
+    z-index: 2;
+    left: 50.12%;
+    top: 86.6%;
+}
+
+#door3 {
+    height: 4%;
+    width: 0;
+    position: absolute;
+    z-index: 2;
+    left: 53.8%;
+    top: 86.6%;
+}
+
+p {
+    text-align: center;
+    font-weight: bolder;
+}
+
+.floor_button {
+    width: 27%;
+    height: 3.4%;
+    position: absolute;
+    left: 38.5%;
+}
+
+.button {
+    width: 40%;
+    height: 3.4%;
+    border-radius: 5px;
+    background: #eaeaea;
+    position: absolute;
+    left: 30%;
+}
+
+#margin_button {
+    position: absolute;
+    top: 98%;
+    height: 2%;
+    width: 100%;
+    background: #a8afa9;
+}
+
+.noneDisplaySpan {
+    display: none;
+}
+
+.default:hover span {
+    position: absolute;
+    display: block;
+    left: 40%;
+    top: 45%;
+    width: 20%;
+    height: 20%;
+    border-radius: 5px;
+    border: #a8afa9 solid;
+    background: #a8afa9;
+}
+
+.smart:hover span {
+    position: absolute;
+    display: block;
+    left: 70%;
+    top: 0;
+    width: 40%;
+    height: 60%;
+    border-radius: 5px;
+    border: #a8afa9 solid;
+    background: #a8afa9;
+}
+#config_form{
+    position: absolute;
+    text-align: center;
+    margin-top: 10%;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+}
+#lift1_action {
+    position: absolute;
+    top: 50%;
+    width: 20%;
+    height: 40%;
+    left: 10%;
+    background: #eaeaea;
+}
+
+#lift2_action {
+    position: absolute;
+    top: 50%;
+    width: 20%;
+    height: 40%;
+    left: 40%;
+    background: #eaeaea;
+}
+
+#lift3_action {
+    position: absolute;
+    top: 50%;
+    width: 20%;
+    height: 40%;
+    left: 70%;
+    background: #eaeaea;
+}
+.Up_Set_text {
+    position:absolute;
+    top:17%;
+    overflow: auto;
+    background: #eaeaea;
+    width: 20%;
+    height: 4%;
+}
+.Down_Set_text {
+    position:absolute;
+    top:24%;
+    overflow: auto;
+    background: #eaeaea;
+    width: 20%;
+    height: 4%;
+}
+.status_text{
+    position:absolute;
+    top:31%;
+    overflow: auto;
+    background: #eaeaea;
+    width: 20%;
+    height: 4%;
+}
+.direction_text{
+    position:absolute;
+    top:38%;
+    overflow: auto;
+    background: #eaeaea;
+    width: 20%;
+    height: 4%;
+}
+textarea::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width : 8px;  /*高宽分别对应横竖滚动条的尺寸*/
+    height: 0px;
+}
+textarea::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius: 7px;
+    box-shadow   : inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background   : #b4b3b3;
+}
+textarea::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    box-shadow   : inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background   : #ededed;
+}
+textarea{
+    font-weight: bold;
+    text-align: center;
+}
+

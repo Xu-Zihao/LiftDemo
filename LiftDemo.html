@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LiftDemo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/layout.css">
+    <script src="js/jquery-3.6.0.js"></script>
+    <script src="js/Controller.js"></script>
+    <script src="js/CoordinateAgent.js"></script>
+</head>
+<body>
+<div id="all_container">
+    <div id="global_controller">
+
+    </div>
+    <div id="left">
+        <div id="config">
+            <form id="config_form">
+                电梯运行配置<input type="radio" name="config" id="default" value="default" checked>
+                <label for="default" class="default">默认
+                    <span class="noneDisplaySpan">请求平均分，第一次楼层请求分配给电梯1，第二次分配给电梯2.....</span>
+                </label>
+                <input type="radio" name="config" id="smart" value="smart">
+                <label for="smart" class="smart">智能化1
+                    <span class="noneDisplaySpan">电梯采用最近匹配，每台电梯只接受来自离自己当前位置最近的请求......</span>
+                </label>
+            </form>
+        </div>
+        <div id="status">
+<!--            <div id="over_status">-->
+
+<!--            </div>-->
+            <p style="position: absolute; left:45%;top: 2%" id="p_clickable">电梯控制信息</p>
+            <p style="position:absolute;left:18%;top:7%">电梯1</p>
+            <p style="position:absolute;left:48%;top: 7%">电梯2</p>
+            <p style="position:absolute;left:78%;top: 7%">电梯3</p>
+            <p style="position:absolute;left:0.5%;top: 15.3%">上呼请求</p>
+            <p style="position:absolute;left:0.5%;top: 22.5%">下呼请求</p>
+            <p style="position:absolute;left:0.5%;top: 29.6%">电梯状态</p>
+            <p style="position:absolute;left:0.5%;top: 36.4%">运行方向</p>
+            <p style="position:absolute;left:0.5%;top: 47.8%">电梯动作</p>
+            <textarea id="lift1_Up" class="Up_Set_text" style="left: 10%"></textarea>
+            <textarea id="lift2_Up" class="Up_Set_text" style="left: 40%"></textarea>
+            <textarea id="lift3_Up" class="Up_Set_text" style="left: 70%"></textarea>
+            <textarea id="lift1_Down" class="Down_Set_text" style="left: 10%"></textarea>
+            <textarea id="lift2_Down" class="Down_Set_text" style="left: 40%"></textarea>
+            <textarea id="lift3_Down" class="Down_Set_text" style="left: 70%"></textarea>
+            <textarea id="lift1_status" class="status_text" style="left: 10%">Stopping</textarea>
+            <textarea id="lift2_status" class="status_text" style="left: 40%">Stopping</textarea>
+            <textarea id="lift3_status" class="status_text" style="left: 70%">Stopping</textarea>
+            <textarea id="lift1_direction" class="direction_text" style="left: 10%">none</textarea>
+            <textarea id="lift2_direction" class="direction_text" style="left: 40%">none</textarea>
+            <textarea id="lift3_direction" class="direction_text" style="left: 70%">none</textarea>
+            <textarea id="lift1_action" rows="12" cols="20" ></textarea>
+            <textarea id="lift2_action" rows="12" cols="20" ></textarea>
+            <textarea id="lift3_action" rows="12" cols="20" ></textarea>
+        </div>
+    </div>
+    <div id="building_container"></div>
+    <div id="floor_button">
+        <p>楼层按钮</p>
+        <img id="fb_8down" class="floor_button" src="src/button_down.jpg" style="top:10%">
+        <img id="fb_7up" class="floor_button" src="src/button_up.jpg" style="top:17.5%">
+        <img id="fb_7down" class="floor_button" src="src/button_down.jpg" style="top:21%">
+        <img id="fb_6up" class="floor_button" src="src/button_up.jpg" style="top:28.5%">
+        <img id="fb_6down" class="floor_button" src="src/button_down.jpg" style="top:32.2%">
+        <img id="fb_5up" class="floor_button" src="src/button_up.jpg" style="top:39.5%">
+        <img id="fb_5down" class="floor_button" src="src/button_down.jpg" style="top:43%">
+        <img id="fb_4up" class="floor_button" src="src/button_up.jpg" style="top:50.5%">
+        <img id="fb_4down" class="floor_button" src="src/button_down.jpg" style="top:54.1%">
+        <img id="fb_3up" class="floor_button" src="src/button_up.jpg" style="top:61.5%">
+        <img id="fb_3down" class="floor_button" src="src/button_down.jpg" style="top:65%">
+        <img id="fb_2up" class="floor_button" src="src/button_up.jpg" style="top:72.5%">
+        <img id="fb_2down" class="floor_button" src="src/button_down.jpg" style="top:76%">
+        <img id="fb_1up" class="floor_button" src="src/button_up.jpg" style="top:86%">
+    </div>
+
+    <div id="lift_button">
+        <div id="lift_button1">
+            <p>电梯按钮</p>
+            <button id="lb_18" class="button" style="top:9.5%">8</button>
+            <button id="lb_17" class="button" style="top:19%">7</button>
+            <button id="lb_16" class="button" style="top:30%">6</button>
+            <button id="lb_15" class="button" style="top:41%">5</button>
+            <button id="lb_14" class="button" style="top:52%">4</button>
+            <button id="lb_13" class="button" style="top:62%">3</button>
+            <button id="lb_12" class="button" style="top:74%">2</button>
+            <button id="lb_11" class="button" style="top:86%">1</button>
+        </div>
+        <div id="lift_button2">
+            <p>电梯按钮</p>
+            <button id="lb_28" class="button" style="top:9.5%">8</button>
+            <button id="lb_27" class="button" style="top:19%">7</button>
+            <button id="lb_26" class="button" style="top:30%">6</button>
+            <button id="lb_25" class="button" style="top:41%">5</button>
+            <button id="lb_24" class="button" style="top:52%">4</button>
+            <button id="lb_23" class="button" style="top:62%">3</button>
+            <button id="lb_22" class="button" style="top:74%">2</button>
+            <button id="lb_21" class="button" style="top:86%">1</button>
+        </div>
+        <div id="lift_button3">
+            <p>电梯按钮</p>
+            <button id="lb_38" class="button" style="top:9.5%">8</button>
+            <button id="lb_37" class="button" style="top:19%">7</button>
+            <button id="lb_36" class="button" style="top:30%">6</button>
+            <button id="lb_35" class="button" style="top:41%">5</button>
+            <button id="lb_34" class="button" style="top:52%">4</button>
+            <button id="lb_33" class="button" style="top:62%">3</button>
+            <button id="lb_32" class="button" style="top:74%">2</button>
+            <button id="lb_31" class="button" style="top:86%">1</button>
+        </div>
+
+    </div>
+
+    <img id="lift1" src="src/lift.png">
+    <img id="lift2" src="src/lift.png">
+    <img id="lift3" src="src/lift.png">
+    <img id="door1" src="src/door.png">
+    <img id="door2" src="src/door.png">
+    <img id="door3" src="src/door.png">
+
+</div>
+</body>
+</html>
